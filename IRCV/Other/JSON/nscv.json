@@ -1,0 +1,309 @@
+{
+    "id": 1,
+    "name": "Lorem Ipsum",
+    "username": "iruleonu",
+    "profileImageUrl": "https://avatars3.githubusercontent.com/u/654697?s=400&v=4",
+    "overview": "Phasellus sit amet lobortis magna, eu fringilla risus. Nullam dictum dapibus pellentesque. Duis pharetra odio quis urna posuere, ut ullamcorper ipsum consequat. Curabitur elementum neque sed nulla tempus egestas. Sed malesuada, libero eu interdum euismod, lacus ante porttitor nulla, vel fringilla risus lectus quis erat. Duis vitae nulla eget ligula varius varius. Curabitur semper, nulla vitae vulputate rutrum, erat dolor tincidunt ipsum, at commodo est massa sit amet nibh. Etiam tincidunt magna mattis erat tempor molestie. Vestibulum pretium, dolor nec convallis volutpat, mi diam congue nunc, vitae feugiat elit magna in sem. Curabitur elementum nisi elit, sed sodales ante fringilla at. Donec laoreet mi vel dui rutrum, sed pharetra libero mattis.",
+    "techSkills": [
+        {
+            "id": 1,
+            "name": "Objective-C",
+            "score": 5
+        },
+        {
+            "id": 2,
+            "name": "Swift",
+            "score": 5
+        },
+        {
+            "id": 3,
+            "name": "ReactiveSwift",
+            "score": 5
+        },
+        {
+            "id": 4,
+            "name": "RxSwift",
+            "score": 5
+        },
+        {
+            "id": 5,
+            "name": "MVVM",
+            "score": 5
+        },
+        {
+            "id": 6,
+            "name": "Coordinators",
+            "score": 5
+        },
+        {
+            "id": 7,
+            "name": "VIPER",
+            "score": 5
+        },
+        {
+            "id": 8,
+            "name": "RIBs",
+            "score": 5
+        },
+        {
+            "id": 9,
+            "name": "CoreData",
+            "score": 5
+        },
+        {
+            "id": 10,
+            "name": "Realm",
+            "score": 5
+        },
+        {
+            "id": 11,
+            "name": "CouchDB",
+            "score": 5
+        },
+        {
+            "id": 12,
+            "name": "CocoaPods",
+            "score": 5
+        },
+        {
+            "id": 13,
+            "name": "Carthage",
+            "score": 5
+        },
+        {
+            "id": 14,
+            "name": "Git",
+            "score": 5
+        },
+        {
+            "id": 15,
+            "name": "TBD",
+            "score": 5
+        },
+        {
+            "id": 16,
+            "name": "Git",
+            "score": 5
+        },
+        {
+            "id": 17,
+            "name": "Gitflow",
+            "score": 5
+        },
+        {
+            "id": 18,
+            "name": "Jenkins",
+            "score": 5
+        },
+        {
+            "id": 19,
+            "name": "Travis",
+            "score": 5
+        },
+        {
+            "id": 20,
+            "name": "Greenhouse",
+            "score": 5
+        },
+        {
+            "id": 21,
+            "name": "Nevercode",
+            "score": 5
+        },
+        {
+            "id": 22,
+            "name": "Gitlab",
+            "score": 5
+        },
+        {
+            "id": 23,
+            "name": "HockeyApp",
+            "score": 5
+        },
+        {
+            "id": 24,
+            "name": "Fastlane",
+            "score": 5
+        },
+        {
+            "id": 25,
+            "name": "Quick",
+            "score": 5
+        },
+        {
+            "id": 26,
+            "name": "Nimble",
+            "score": 5
+        },
+        {
+            "id": 27,
+            "name": "SwiftyMocky",
+            "score": 5
+        },
+        {
+            "id": 28,
+            "name": "Sorcery",
+            "score": 5
+        },
+        {
+            "id": 29,
+            "name": "AsyncDisplayKit",
+            "score": 5
+        },
+        {
+            "id": 30,
+            "name": "Texture",
+            "score": 5
+        },
+        {
+            "id": 31,
+            "name": "GraphQL",
+            "score": 5
+        },
+        {
+            "id": 32,
+            "name": "AFNetworking",
+            "score": 5
+        },
+        {
+            "id": 33,
+            "name": "NSURLSession",
+            "score": 5
+        },
+        {
+            "id": 34,
+            "name": "Siesta",
+            "score": 5
+        },
+        {
+            "id": 35,
+            "name": "Apollo",
+            "score": 5
+        },
+        {
+            "id": 36,
+            "name": "SwiftLint",
+            "score": 5
+        },
+        {
+            "id": 37,
+            "name": "SAMKeychain",
+            "score": 5
+        },
+        {
+            "id": 38,
+            "name": "SwiftKeychainWrapper",
+            "score": 5
+        },
+        {
+            "id": 39,
+            "name": "SwiftyBeaver",
+            "score": 5
+        },
+        {
+            "id": 40,
+            "name": "Lotty",
+            "score": 5
+        },
+        {
+            "id": 41,
+            "name": "Apple Pay",
+            "score": 5
+        },
+        {
+            "id": 42,
+            "name": "MangoPay",
+            "score": 5
+        },
+        {
+            "id": 43,
+            "name": "Stripe",
+            "score": 5
+        },
+        {
+            "id": 44,
+            "name": "CardIO",
+            "score": 5
+        },
+        {
+            "id": 45,
+            "name": "Fabric",
+            "score": 5
+        },
+        {
+            "id": 46,
+            "name": "Firebase",
+            "score": 5
+        },
+        {
+            "id": 47,
+            "name": "Appsee",
+            "score": 5
+        },
+    ],
+    "workExperience": [
+        {
+            "id": 7,
+            "companyName": "Company Name",
+            "companyLocation": "London, United Kingdom",
+            "role": "Senior iOS Developer",
+            "startDate": "03-2016",
+            "endDate": "Present",
+            "jobDescription": "Phasellus sit amet lobortis magna, eu fringilla risus. Nullam dictum dapibus pellentesque. Duis pharetra odio quis urna posuere, ut ullamcorper ipsum consequat. Curabitur elementum neque sed nulla tempus egestas. Sed malesuada, libero eu interdum euismod, lacus ante porttitor nulla, vel fringilla risus lectus quis erat. Duis vitae nulla eget ligula varius varius. Curabitur semper, nulla vitae vulputate rutrum, erat dolor tincidunt ipsum, at commodo est massa sit amet nibh. Etiam tincidunt magna mattis erat tempor molestie. Vestibulum pretium, dolor nec convallis volutpat, mi diam congue nunc, vitae feugiat elit magna in sem. Curabitur elementum nisi elit, sed sodales ante fringilla at. Donec laoreet mi vel dui rutrum, sed pharetra libero mattis.",
+        },
+        {
+            "id": 6,
+            "companyName": "Company Name",
+            "companyLocation": "London, United Kingdom",
+            "role": "iOS Developer",
+            "startDate": "02-2015",
+            "endDate": "02-2016",
+            "jobDescription": "Phasellus sit amet lobortis magna, eu fringilla risus. Nullam dictum dapibus pellentesque. Duis pharetra odio quis urna posuere, ut ullamcorper ipsum consequat. Curabitur elementum neque sed nulla tempus egestas. Sed malesuada, libero eu interdum euismod, lacus ante porttitor nulla, vel fringilla risus lectus quis erat. Duis vitae nulla eget ligula varius varius. Curabitur semper, nulla vitae vulputate rutrum, erat dolor tincidunt ipsum, at commodo est massa sit amet nibh. Etiam tincidunt magna mattis erat tempor molestie. Vestibulum pretium, dolor nec convallis volutpat, mi diam congue nunc, vitae feugiat elit magna in sem. Curabitur elementum nisi elit, sed sodales ante fringilla at. Donec laoreet mi vel dui rutrum, sed pharetra libero mattis.",
+        },
+        {
+            "id": 5,
+            "companyName": "Company Name",
+            "companyLocation": "Guimarães, Portugal",
+            "role": "Mobile Developer",
+            "startDate": "02-2013",
+            "endDate": "12-2014",
+            "jobDescription": "Phasellus sit amet lobortis magna, eu fringilla risus. Nullam dictum dapibus pellentesque. Duis pharetra odio quis urna posuere, ut ullamcorper ipsum consequat. Curabitur elementum neque sed nulla tempus egestas. Sed malesuada, libero eu interdum euismod, lacus ante porttitor nulla, vel fringilla risus lectus quis erat. Duis vitae nulla eget ligula varius varius. Curabitur semper, nulla vitae vulputate rutrum, erat dolor tincidunt ipsum, at commodo est massa sit amet nibh. Etiam tincidunt magna mattis erat tempor molestie. Vestibulum pretium, dolor nec convallis volutpat, mi diam congue nunc, vitae feugiat elit magna in sem. Curabitur elementum nisi elit, sed sodales ante fringilla at. Donec laoreet mi vel dui rutrum, sed pharetra libero mattis.",
+        },
+        {
+            "id": 4,
+            "companyName": "Company Name",
+            "companyLocation": "Detroit, USA (remote through elance)",
+            "role": "iOS and macOS Developer",
+            "startDate": "10-2013",
+            "endDate": "02-2012",
+            "jobDescription": "Phasellus sit amet lobortis magna, eu fringilla risus. Nullam dictum dapibus pellentesque. Duis pharetra odio quis urna posuere, ut ullamcorper ipsum consequat. Curabitur elementum neque sed nulla tempus egestas. Sed malesuada, libero eu interdum euismod, lacus ante porttitor nulla, vel fringilla risus lectus quis erat. Duis vitae nulla eget ligula varius varius. Curabitur semper, nulla vitae vulputate rutrum, erat dolor tincidunt ipsum, at commodo est massa sit amet nibh. Etiam tincidunt magna mattis erat tempor molestie. Vestibulum pretium, dolor nec convallis volutpat, mi diam congue nunc, vitae feugiat elit magna in sem. Curabitur elementum nisi elit, sed sodales ante fringilla at. Donec laoreet mi vel dui rutrum, sed pharetra libero mattis.",
+        },
+        {
+            "id": 3,
+            "companyName": "Company Name",
+            "companyLocation": "Sydney, Australia (remote through elance)",
+            "role": "iOS Developer",
+            "startDate": "12-2012",
+            "endDate": "11-2012",
+            "jobDescription": "Phasellus sit amet lobortis magna, eu fringilla risus. Nullam dictum dapibus pellentesque. Duis pharetra odio quis urna posuere, ut ullamcorper ipsum consequat. Curabitur elementum neque sed nulla tempus egestas. Sed malesuada, libero eu interdum euismod, lacus ante porttitor nulla, vel fringilla risus lectus quis erat. Duis vitae nulla eget ligula varius varius. Curabitur semper, nulla vitae vulputate rutrum, erat dolor tincidunt ipsum, at commodo est massa sit amet nibh. Etiam tincidunt magna mattis erat tempor molestie. Vestibulum pretium, dolor nec convallis volutpat, mi diam congue nunc, vitae feugiat elit magna in sem. Curabitur elementum nisi elit, sed sodales ante fringilla at. Donec laoreet mi vel dui rutrum, sed pharetra libero mattis.",
+        },
+        {
+            "id": 2,
+            "companyName": "Company Name",
+            "companyLocation": "Portugal",
+            "role": "iOS and macOS Developer",
+            "startDate": "06-2011",
+            "endDate": "04-2011",
+            "jobDescription": "Phasellus sit amet lobortis magna, eu fringilla risus. Nullam dictum dapibus pellentesque. Duis pharetra odio quis urna posuere, ut ullamcorper ipsum consequat. Curabitur elementum neque sed nulla tempus egestas. Sed malesuada, libero eu interdum euismod, lacus ante porttitor nulla, vel fringilla risus lectus quis erat. Duis vitae nulla eget ligula varius varius. Curabitur semper, nulla vitae vulputate rutrum, erat dolor tincidunt ipsum, at commodo est massa sit amet nibh. Etiam tincidunt magna mattis erat tempor molestie. Vestibulum pretium, dolor nec convallis volutpat, mi diam congue nunc, vitae feugiat elit magna in sem. Curabitur elementum nisi elit, sed sodales ante fringilla at. Donec laoreet mi vel dui rutrum, sed pharetra libero mattis.",
+        },
+        {
+            "id": 1,
+            "companyName": "Company Name",
+            "companyLocation": "Portugal",
+            "role": "Web Developer",
+            "startDate": "01-2006",
+            "endDate": "07-2013",
+            "jobDescription": "Phasellus sit amet lobortis magna, eu fringilla risus. Nullam dictum dapibus pellentesque. Duis pharetra odio quis urna posuere, ut ullamcorper ipsum consequat. Curabitur elementum neque sed nulla tempus egestas. Sed malesuada, libero eu interdum euismod, lacus ante porttitor nulla, vel fringilla risus lectus quis erat. Duis vitae nulla eget ligula varius varius. Curabitur semper, nulla vitae vulputate rutrum, erat dolor tincidunt ipsum, at commodo est massa sit amet nibh. Etiam tincidunt magna mattis erat tempor molestie. Vestibulum pretium, dolor nec convallis volutpat, mi diam congue nunc, vitae feugiat elit magna in sem. Curabitur elementum nisi elit, sed sodales ante fringilla at. Donec laoreet mi vel dui rutrum, sed pharetra libero mattis.",
+        },
+    ]
+}
