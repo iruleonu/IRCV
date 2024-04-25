@@ -11,10 +11,10 @@ import Foundation
 import SwiftUI
 import Combine
 
-final class WorkDetailsScreenViewModel: BindableObject {
+final class WorkDetailsScreenViewModel: ObservableObject {
     private(set) var routing: WorkDetailsRouting
-    private(set) var workExperience: WorkExperience
-    
+    @Published private(set) var workExperience: WorkExperience
+
     var didChange = PassthroughSubject<WorkDetailsScreenViewModel, Never>()
     
     init(routing: WorkDetailsRouting, workExperience: WorkExperience) {
