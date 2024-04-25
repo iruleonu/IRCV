@@ -7,16 +7,16 @@
 //
 
 import SwiftUI
+import Combine
 
 struct WorkDetailsScreen : View {
-    @ObjectBinding var viewModel: WorkDetailsScreenViewModel
+    @ObservedObject var viewModel: WorkDetailsScreenViewModel
     
     var body: some View {
         let vm = viewModel
         return GeometryReader { container in
             ScrollView() {
                 ScrollViewContentView(workExperience: vm.workExperience)
-                    .frame(idealWidth: container.size.width, minHeight: 1500, alignment: .top)
             }
         }
     }
@@ -28,32 +28,32 @@ struct ScrollViewContentView : View {
     var body: some View {
         VStack(alignment: .leading, spacing: 5) {
             Text(workExperience.companyName)
-                .color(.primary)
+                .foregroundColor(.primary)
                 .lineLimit(2)
                 .font(.largeTitle)
             
             HStack(alignment: .top, spacing: 2) {
                 Text(workExperience.startDate)
-                    .color(.primary)
+                    .foregroundColor(.primary)
                     .font(.caption)
                 Text("-")
-                    .color(.primary)
+                    .foregroundColor(.primary)
                     .font(.caption)
                 Text(workExperience.endDate)
-                    .color(.primary)
+                    .foregroundColor(.primary)
                     .font(.caption)
             }
             
             Text(workExperience.companyLocation)
-                .color(.primary)
+                .foregroundColor(.primary)
                 .font(.caption)
             
             Text(workExperience.role)
-                .color(.primary)
+                .foregroundColor(.primary)
                 .font(.subheadline)
             
             Text(workExperience.jobDescription)
-                .color(.primary)
+                .foregroundColor(.primary)
                 .font(.footnote)
                 .lineLimit(nil)
             }

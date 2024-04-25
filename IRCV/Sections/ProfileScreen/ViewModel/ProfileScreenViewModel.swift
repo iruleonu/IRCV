@@ -10,18 +10,16 @@ import Foundation
 import SwiftUI
 import Combine
 
-final class ProfileScreenViewModel: BindableObject {
+final class ProfileScreenViewModel: ObservableObject {
     private(set) var routing: ProfileScreenRouting
     private var apiService: APIFetchCVProtocol
-    
-    var didChange = PassthroughSubject<ProfileScreenViewModel, Never>()
-    
-    var name = ""
-    var overview = ""
-    var techSkills = [TechSkill]()
-    var workExperience = [WorkExperience]()
-    var profileImageUrl = ""
-    
+
+    @Published var name = ""
+    @Published var overview = ""
+    @Published var techSkills = [TechSkill]()
+    @Published var workExperience = [WorkExperience]()
+    @Published var profileImageUrl = ""
+
     private(set) var userProfile: User {
         didSet {
             name = userProfile.name
@@ -29,17 +27,10 @@ final class ProfileScreenViewModel: BindableObject {
             techSkills = userProfile.techSkills
             workExperience = userProfile.workExperience
             profileImageUrl = userProfile.profileImageUrl
-            didChange.send(self)
         }
     }
     
-    private var cancellable: Cancellable? {
-        didSet { oldValue?.cancel() }
-    }
-    
-    deinit {
-        cancellable?.cancel()
-    }
+    private var cancellables = Set<AnyCancellable>()
     
     init(routing: ProfileScreenRouting, network: APIFetchCVProtocol) {
         self.routing = routing
@@ -48,22 +39,23 @@ final class ProfileScreenViewModel: BindableObject {
     }
     
     func onAppear() {
-        didChange.send(self)
         fetchUserCVFromGithub()
     }
     
     private func fetchUserCVFromGithub() {
-        cancellable = apiService.fetchUserProfile()
-            .catch({ (error) -> AnyPublisher<User, APIServiceError> in
-                return AnyPublisher { subscriber in
+        apiService.fetchUserProfile()
+            .catch({ (error) -> Future<User, Never> in
+                Future { promise in
                     let userProfile: User = ProfileScreenViewModel.readPersistedUser()
-                    _ = subscriber.receive(userProfile)
+                    promise(.success(userProfile))
                 }
             })
+            .receive(on: DispatchQueue.main)
             .sink { [weak self] (userProfile) in
                 guard let self = self else { return }
                 self.userProfile = userProfile
-        }
+            }
+            .store(in: &cancellables)
     }
     
     private static func readPersistedUser() -> User {

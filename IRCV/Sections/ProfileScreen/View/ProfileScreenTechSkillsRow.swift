@@ -12,10 +12,10 @@ struct ProfileScreenTechSkillsRow: View {
     var items: [TechSkill]
     
     var body: some View {
-        VStack(alignment: .leading) {
-            ScrollView(showsHorizontalIndicator: false) {
-                HStack(alignment: .top, spacing: 10) {
-                    ForEach(self.items.identified(by: \.name)) { techSkill in
+        GeometryReader { geometryReader in
+            ScrollView(.horizontal, showsIndicators: false) {
+                LazyHStack(spacing: 10) {
+                    ForEach(self.items) { techSkill in
                         ProfileScreenTechSkillsItem(techSkill: techSkill.name)
                     }
                 }
@@ -29,7 +29,7 @@ struct ProfileScreenTechSkillsItem: View {
     
     var body: some View {
         Text(techSkill)
-            .color(.primary)
+            .foregroundColor(.primary)
             .font(.caption)
     }
 }
@@ -37,7 +37,17 @@ struct ProfileScreenTechSkillsItem: View {
 #if DEBUG
 struct ProfileScreenTechSkillsRow_Previews: PreviewProvider {
     static var previews: some View {
-        ProfileScreenTechSkillsRow(items: [TechSkill(id: 1, name: "na", score: 5), TechSkill(id: 2, name: "2", score: 5)])
+        let items = [
+            TechSkill(id: 1, name: "TechSkill1", score: 5),
+            TechSkill(id: 2, name: "TechSkill2", score: 5),
+            TechSkill(id: 3, name: "TechSkill3", score: 5),
+            TechSkill(id: 4, name: "TechSkill4", score: 5),
+            TechSkill(id: 5, name: "TechSkill5", score: 5),
+            TechSkill(id: 6, name: "TechSkill6", score: 5),
+            TechSkill(id: 7, name: "TechSkill7", score: 5),
+            TechSkill(id: 8, name: "TechSkill8", score: 5)
+        ]
+        ProfileScreenTechSkillsRow(items: items)
     }
 }
 #endif
