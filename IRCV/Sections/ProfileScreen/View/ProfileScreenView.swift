@@ -50,7 +50,29 @@ struct ProfileOverview: View {
     
     var body: some View {
         VStack(alignment: .leading) {
+            HStack(alignment: .center) {
+                AsyncImage(url: URL(string: profileImageUrl)) { phase in
+                    switch phase {
+                    case .failure:
+                        Image("placeholder")
+                    case .success(let image):
+                        image.resizable()
+                    default:
+                        ProgressView()
+                    }
+                }
+                .frame(width: 124, height: 124)
+                .clipShape(.rect(cornerRadius: 124))
+            }
+            .padding(.top, 15)
+            .frame(maxWidth: .infinity)
+
             Text(name)
+                .font(.headline)
+                .padding([.leading, .trailing], 15)
+                .frame(maxWidth: .infinity)
+
+            Text("Overview")
                 .font(.headline)
                 .padding([.leading, .trailing], 15)
                 .padding(.top, 15)
@@ -73,7 +95,7 @@ struct ProfileOverview: View {
             Text("Work experience")
                 .font(.largeTitle)
                 .padding([.leading, .trailing], 15)
-                .padding(.top, 15)
+                .padding(.top, 25)
                 .frame(maxWidth: .infinity)
         }
     }
