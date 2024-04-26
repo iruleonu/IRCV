@@ -7,7 +7,6 @@
 //
 
 import Foundation
-
 import SwiftUI
 
 struct ProfileScreenWorkExperienceCell: View {
@@ -16,33 +15,33 @@ struct ProfileScreenWorkExperienceCell: View {
     var body: some View {
         VStack(alignment: .leading, spacing: 5) {
             Text(workExperience.companyName)
-                .color(.primary)
+                .foregroundColor(.primary)
                 .font(.largeTitle)
-            
+
             HStack(alignment: .top, spacing: 2) {
                 Text(workExperience.startDate)
-                    .color(.primary)
+                    .foregroundColor(.primary)
                     .font(.caption)
                 Text("-")
-                    .color(.primary)
+                    .foregroundColor(.primary)
                     .font(.caption)
                 Text(workExperience.endDate)
-                    .color(.primary)
+                    .foregroundColor(.primary)
                     .font(.caption)
                 Text("|")
-                    .color(.primary)
+                    .foregroundColor(.primary)
                     .font(.caption)
                 Text(workExperience.companyLocation)
-                    .color(.primary)
+                    .foregroundColor(.primary)
                     .font(.caption)
             }
             
             Text(workExperience.role)
-                .color(.primary)
+                .foregroundColor(.primary)
                 .font(.subheadline)
             
             Text(workExperience.jobDescription)
-                .color(.primary)
+                .foregroundColor(.primary)
                 .font(.footnote)
                 .lineLimit(2)
         }

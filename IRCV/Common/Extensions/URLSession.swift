@@ -11,33 +11,31 @@ import Combine
 
 extension URLSession {
     func fetchData(_ request: URLRequest) -> AnyPublisher<(Data, URLResponse), DataProviderError> {
-        AnyPublisher { subscriber in
-            let task = self.dataTask(with: request) { data, response, error in
-                DispatchQueue.main.async {
-                    guard let data = data, let response = response else {
-                        if let e = error {
-                            subscriber.receive(completion: .failure(DataProviderError.requestError(error: e)))
-                        }
+        Future { promise in
+            self.dataTask(with: request) { data, response, error in
+                guard let data = data, let response = response else {
+                    guard let e = error else {
+                        promise(.failure(.unknown))
                         return
                     }
-                    
-                    guard let httpResponse = response as? HTTPURLResponse else {
-                        subscriber.receive(completion: .failure(.unknown))
-                        return
-                    }
-                    
-                    guard 200..<300 ~= httpResponse.statusCode else {
-                        subscriber.receive(completion: .failure(DataProviderError.requestError(httpStatusCode: httpResponse.statusCode, error: error)))
-                        return
-                    }
-                    
-                    _ = subscriber.receive((data, httpResponse))
-                    subscriber.receive(completion: .finished)
+                    promise(.failure(.requestError(error: e)))
+                    return
                 }
+
+                guard let httpResponse = response as? HTTPURLResponse else {
+                    promise(.failure(.unknown))
+                    return
+                }
+
+                guard 200..<300 ~= httpResponse.statusCode else {
+                    promise(.failure(.requestError(httpStatusCode: httpResponse.statusCode, error: error)))
+                    return
+                }
+
+                promise(.success((data, httpResponse)))
             }
-            
-            subscriber.receive(subscription: AnySubscription(task.cancel))
-            task.resume()
+            .resume()
         }
+        .eraseToAnyPublisher()
     }
 }

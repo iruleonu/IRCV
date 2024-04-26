@@ -9,9 +9,8 @@
 import Foundation
 import UIKit
 
-protocol RootRouting: class {
-    func launchMainScreen()
-    func launchOnBoarding()
+protocol RootRouting {
+    func start()
 }
 
 final class RootCoordinator: RootRouting {
@@ -26,9 +25,12 @@ final class RootCoordinator: RootRouting {
     init(window w: UIWindow, builders b: RootChildBuilders) {
         window = w
         builders = b
-        handleLaunchFlow(LaunchFlow.mainScreen)
     }
-    
+
+    func start() {
+        launchMainScreen()
+    }
+
     func launchMainScreen() {
         window.rootViewController = builders.makeMainScreen()
     }
