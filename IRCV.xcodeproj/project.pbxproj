@@ -3,10 +3,12 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 54;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		270CCA7B2BDB421D00DDD156 /* Future.swift in Sources */ = {isa = PBXBuildFile; fileRef = 270CCA7A2BDB421D00DDD156 /* Future.swift */; };
+		270CCA7D2BDB506E00DDD156 /* URLSession+Async.swift in Sources */ = {isa = PBXBuildFile; fileRef = 270CCA7C2BDB506E00DDD156 /* URLSession+Async.swift */; };
 		272D2B6E22B75EAB001B0781 /* WorkDetailsScreenBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 272D2B6D22B75EAB001B0781 /* WorkDetailsScreenBuilder.swift */; };
 		272D2B7022B76164001B0781 /* ProfileScreenCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 272D2B6F22B76164001B0781 /* ProfileScreenCoordinator.swift */; };
 		272D2B7222B7672B001B0781 /* WorkDetailsCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 272D2B7122B7672B001B0781 /* WorkDetailsCoordinator.swift */; };
@@ -43,9 +45,6 @@
 		27FB6FDE22B2C00C00D0A1CF /* RootBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27FB6FB122B2C00C00D0A1CF /* RootBuilder.swift */; };
 		27FB6FE122B2C00C00D0A1CF /* Fetchable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27FB6FB522B2C00C00D0A1CF /* Fetchable.swift */; };
 		27FB6FE322B2C0FA00D0A1CF /* APIService+FetchCV.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27FB6FE222B2C0FA00D0A1CF /* APIService+FetchCV.swift */; };
-		27FB6FE722B2C16700D0A1CF /* Debug.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 27FB6FE422B2C16600D0A1CF /* Debug.xcconfig */; };
-		27FB6FE822B2C16700D0A1CF /* Release.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 27FB6FE522B2C16700D0A1CF /* Release.xcconfig */; };
-		27FB6FE922B2C16700D0A1CF /* UnitTests.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 27FB6FE622B2C16700D0A1CF /* UnitTests.xcconfig */; };
 		27FB6FEB22B2C22A00D0A1CF /* URLSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27FB6FEA22B2C22A00D0A1CF /* URLSession.swift */; };
 		27FB6FED22B2C56900D0A1CF /* AppService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27FB6FEC22B2C56900D0A1CF /* AppService.swift */; };
 /* End PBXBuildFile section */
@@ -61,6 +60,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		270CCA7A2BDB421D00DDD156 /* Future.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Future.swift; sourceTree = "<group>"; };
+		270CCA7C2BDB506E00DDD156 /* URLSession+Async.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URLSession+Async.swift"; sourceTree = "<group>"; };
 		272D2B6D22B75EAB001B0781 /* WorkDetailsScreenBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkDetailsScreenBuilder.swift; sourceTree = "<group>"; };
 		272D2B6F22B76164001B0781 /* ProfileScreenCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileScreenCoordinator.swift; sourceTree = "<group>"; };
 		272D2B7122B7672B001B0781 /* WorkDetailsCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkDetailsCoordinator.swift; sourceTree = "<group>"; };
@@ -325,6 +326,8 @@
 				27FB6FEA22B2C22A00D0A1CF /* URLSession.swift */,
 				27FB6F9222B2C00C00D0A1CF /* NSError.swift */,
 				27B75C7222B6F9E60084BCCD /* AnySubscription.swift */,
+				270CCA7A2BDB421D00DDD156 /* Future.swift */,
+				270CCA7C2BDB506E00DDD156 /* URLSession+Async.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -413,8 +416,9 @@
 		27FB6F4922B2B58200D0A1CF /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				BuildIndependentTargetsInParallel = YES;
 				LastSwiftUpdateCheck = 1100;
-				LastUpgradeCheck = 1100;
+				LastUpgradeCheck = 1520;
 				ORGANIZATIONNAME = "Nuno Salvador";
 				TargetAttributes = {
 					27FB6F5022B2B58200D0A1CF = {
@@ -450,14 +454,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				27FB6FE722B2C16700D0A1CF /* Debug.xcconfig in Resources */,
 				27FB6F6122B2B58300D0A1CF /* LaunchScreen.storyboard in Resources */,
 				27FB6F5E22B2B58300D0A1CF /* Preview Assets.xcassets in Resources */,
 				27B75C8222B7190C0084BCCD /* nscv.json in Resources */,
 				27B75C7C22B716630084BCCD /* README.md in Resources */,
 				27FB6F5B22B2B58300D0A1CF /* Assets.xcassets in Resources */,
-				27FB6FE922B2C16700D0A1CF /* UnitTests.xcconfig in Resources */,
-				27FB6FE822B2C16700D0A1CF /* Release.xcconfig in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -478,6 +479,7 @@
 				272D2B7422B767FE001B0781 /* WorkDetailsScreenViewModel.swift in Sources */,
 				27FB6FEB22B2C22A00D0A1CF /* URLSession.swift in Sources */,
 				27B75C8622B728E40084BCCD /* ProfileScreenTechSkillsRow.swift in Sources */,
+				270CCA7D2BDB506E00DDD156 /* URLSession+Async.swift in Sources */,
 				27B75C7922B70F980084BCCD /* ProfileScreenViewModel.swift in Sources */,
 				272D2B6E22B75EAB001B0781 /* WorkDetailsScreenBuilder.swift in Sources */,
 				27B75C7E22B7187F0084BCCD /* ReadFile.swift in Sources */,
@@ -505,6 +507,7 @@
 				27FB6FE322B2C0FA00D0A1CF /* APIService+FetchCV.swift in Sources */,
 				27FB6F5722B2B58200D0A1CF /* SceneDelegate.swift in Sources */,
 				27FB6FD522B2C00C00D0A1CF /* RootCoordinator.swift in Sources */,
+				270CCA7B2BDB421D00DDD156 /* Future.swift in Sources */,
 				27FB6FC122B2C00C00D0A1CF /* NSObject.swift in Sources */,
 				27FB6FC622B2C00C00D0A1CF /* NSError.swift in Sources */,
 			);
@@ -567,6 +570,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -577,6 +581,7 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -628,6 +633,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -638,6 +644,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;

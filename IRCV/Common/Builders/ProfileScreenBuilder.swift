@@ -18,7 +18,7 @@ protocol ProfileScreenChildBuilders {
 }
 
 struct ProfileScreenBuilder {
-    func make(network: APIFetchCVProtocol) -> ProfileScreenView {
+    @MainActor func make(network: APIFetchCVProtocol) -> ProfileScreenView {
         let coordinator = ProfileScreenCoordinator(builders: self, network: network)
         let vm = ProfileScreenViewModel(routing: coordinator, network: network)
         return ProfileScreenView(viewModel: vm)

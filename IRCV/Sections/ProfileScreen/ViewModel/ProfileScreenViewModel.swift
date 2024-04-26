@@ -10,6 +10,7 @@ import Foundation
 import SwiftUI
 import Combine
 
+@MainActor
 final class ProfileScreenViewModel: ObservableObject {
     private(set) var routing: ProfileScreenRouting
     private var apiService: APIFetchCVProtocol
@@ -38,27 +39,23 @@ final class ProfileScreenViewModel: ObservableObject {
         self.userProfile = ProfileScreenViewModel.readPersistedUser()
     }
     
-    func onAppear() {
-        fetchUserCVFromGithub()
+    func onAppear() async {
+        await fetchUserCVFromGithubAsync()
     }
-    
-    private func fetchUserCVFromGithub() {
-        apiService.fetchUserProfile()
-            .catch({ (error) -> Future<User, Never> in
-                Future { promise in
-                    let userProfile: User = ProfileScreenViewModel.readPersistedUser()
-                    promise(.success(userProfile))
-                }
-            })
-            .receive(on: DispatchQueue.main)
-            .sink { [weak self] (userProfile) in
-                guard let self = self else { return }
-                self.userProfile = userProfile
-            }
-            .store(in: &cancellables)
+}
+
+private extension ProfileScreenViewModel {
+    func fetchUserCVFromGithubAsync() async {
+        do {
+            let fetchUserProfile = try await apiService.fetchUserProfileAsync()
+            self.userProfile = fetchUserProfile
+        } catch {
+            let userProfile: User = ProfileScreenViewModel.readPersistedUser()
+            self.userProfile = userProfile
+        }
     }
-    
-    private static func readPersistedUser() -> User {
+
+    static func readPersistedUser() -> User {
         let userProfile: User = ReadFile.object(from: "nscv", extension: "json")
         return userProfile
     }

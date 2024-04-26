@@ -11,6 +11,8 @@ import Combine
 
 protocol APIFetchCVProtocol {
     func fetchUserProfile() -> AnyPublisher<User, APIServiceError>
+    func fetchUserProfileAsync() async throws -> User
+    func fetchUserProfileAsyncResult() async -> Result<User, APIServiceError>
 }
 
 extension APIServiceImpl: APIFetchCVProtocol {
@@ -31,5 +33,42 @@ extension APIServiceImpl: APIFetchCVProtocol {
             .mapError { APIServiceError.network(error: $0) }
             .flatMap(parseData)
             .eraseToAnyPublisher()
+    }
+
+    func fetchUserProfileAsync() async throws -> User {
+        let properties = Resource.nscv.requestProperties
+        let urlRequest = URLRequest(url: apiBaseUrl.appendingPathComponent(properties.path))
+        let parseData: ((Data, URLResponse)) throws -> User = { tuple in
+            do {
+                let result = try JSONDecoder().decode(User.self, from: tuple.0)
+                return result
+            } catch {
+                throw APIServiceError.parsing(error: error)
+            }
+        }
+
+        let dataResponse = try await session.fetchDataAsync(urlRequest)
+        let parsedUser = try parseData(dataResponse)
+        return parsedUser
+    }
+
+    func fetchUserProfileAsyncResult() async -> Result<User, APIServiceError> {
+        let properties = Resource.nscv.requestProperties
+        let urlRequest = URLRequest(url: apiBaseUrl.appendingPathComponent(properties.path))
+        let parseData: ((Data, URLResponse)) throws -> User = { tuple in
+            do {
+                let result = try JSONDecoder().decode(User.self, from: tuple.0)
+                return result
+            } catch {
+                throw APIServiceError.parsing(error: error)
+            }
+        }
+        do {
+            let fetchDataResponse = try await session.fetchDataAsync(urlRequest)
+            let parsedUser = try parseData(fetchDataResponse)
+            return Result.success(parsedUser)
+        } catch let e {
+            return Result.failure(APIServiceError.network(error: e))
+        }
     }
 }

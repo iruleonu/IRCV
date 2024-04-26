@@ -20,13 +20,13 @@ struct RootBuilder: RootChildBuilders {
         return RootCoordinator(window: window, builders: self)
     }
     
-    func makeMainScreen() -> UIViewController {
+    @MainActor func makeMainScreen() -> UIViewController {
         let network = APIServiceImpl.default
         let view = ProfileScreenBuilder().make(network: network)
         return UIHostingController(rootView: view)
     }
     
-    func makeOnBoarding() -> UIViewController {
+    @MainActor func makeOnBoarding() -> UIViewController {
         // TODO: on boarding
         let network = APIServiceImpl.default
         let view = ProfileScreenBuilder().make(network: network)
